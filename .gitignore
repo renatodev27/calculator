@@ -1,0 +1,8 @@
+# ignorar archivos que terminen en l
+*.l
+
+# ignorar archivo específico
+TODO
+
+# excepcionar archivos que cumplen con la primera opcion
+*.html
