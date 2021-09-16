@@ -6,3 +6,6 @@ TODO
 
 # excepcionar archivos que cumplen con la primera opcion
 *.html
+
+# ignorar directorio
+/ignore_directory
