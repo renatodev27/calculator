@@ -1,10 +1,11 @@
-# ignorar archivos que terminen en l
+# ignorar archivos que terminen en .l
 *.l
 
 # excepcionar archivos que cumplen con la primera opcion
-*.html
+!*.html
 
 # ignorar directorio
+/js
 /ignore_directory
 
 # ignorar archivo específico
