@@ -5,7 +5,6 @@
 !*.html
 
 # ignorar directorio
-/js
 /ignore_directory
 
 # ignorar archivo específico
