@@ -1,5 +1,5 @@
 # ignorar archivos que terminen en .l
-*.l
+*.xml
 
 # excepcionar archivos que cumplen con la primera opcion
 !*.html
@@ -9,4 +9,4 @@
 
 # ignorar archivo específico
 TODO
-GIT-GITHUB.txt
+GIT-GITHUB.md
