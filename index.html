@@ -5,16 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" onload="css/myStyles.css" href="css/myStyles.css">
+    <link rel="stylesheet" href="css/myStyles.css">
 </head>
 <body>
-    <h1>Portafolio</h1>
-    <header></header>
-    <nav></nav>
-    <h2>Presentación</h2>
-    <h3>Introducción</h3>
-    <h4>Experiencia</h4>
-    <h5>Contactame</h5>
-    <h6>Pie de página</h6>
+    <div id="app">
+        <calculator-component></calculator-component>
+    </div>
+
+    <template id="calc-template">
+        <div class="calculator-form">
+            <div class="calc-header">
+                <div class="header-left">
+                    <span>13:00 a.m</span>
+                </div>
+                <div class="header-right"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="22" height="18" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="6" y1="18" x2="6" y2="15" />
+                        <line x1="10" y1="18" x2="10" y2="12" />
+                        <line x1="14" y1="18" x2="14" y2="9" />
+                        <line x1="18" y1="18" x2="18" y2="6" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wifi-off" width="22" height="18" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="12" y1="18" x2="12.01" y2="18" />
+                        <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                        <path d="M6.343 12.343a7.963 7.963 0 0 1 3.864 -2.14m4.163 .155a7.965 7.965 0 0 1 3.287 2" />
+                        <path d="M3.515 9.515a12 12 0 0 1 3.544 -2.455m3.101 -.92a12 12 0 0 1 10.325 3.374" />
+                        <line x1="3" y1="3" x2="21" y2="21" />
+                      </svg>
+                </div>
+            </div>
+            <div class="input-calc" align="center">
+                <input type="text" v-model="inputValue" onblur="this.focus()" autofocus v-on:keyup="inputWriting" readonly>
+                <input type="text" v-model="fullOperation" class="full-operation" readonly>
+            </div>
+            <table>
+                <tr>
+                    <td width="25%"><button class="no-number">%</button></td>
+                    <td width="25%"><button @click="ereaseAll(false)" class="no-number">CE</button></td>
+                    <td width="25%"><button @click="ereaseAll(true)" class="no-number">C</button></td>
+                    <td width="23%">
+                        <button @click="backSpace" class="no-number">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-backspace" width="15" height="15" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M20 6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-11l-5 -5a1.5 1.5 0 0 1 0 -2l5 -5z" />
+                                <path d="M12 10l4 4m0 -4l-4 4" />
+                              </svg>
+                        </button>
+                    </td>
+                <tr>
+                    <td><button @click="numberButtonClick(1)">1</button></td>
+                    <td><button @click="numberButtonClick(2)">2</button></td>
+                    <td><button @click="numberButtonClick(3)">3</button></td>
+                    <td><button @click="actionButtonClick('sumar')" class="no-number">+</button></td>
+                </tr>
+                <tr>
+                    <td><button @click="numberButtonClick(4)">4</button></td>
+                    <td><button @click="numberButtonClick(5)">5</button></td>
+                    <td><button @click="numberButtonClick(6)">6</button></td>
+                    <td><button @click="actionButtonClick('restar')" class="no-number">-</button></td>
+                </tr>
+                <tr>
+                    <td><button @click="numberButtonClick(7)">7</button></td>
+                    <td><button @click="numberButtonClick(8)">8</button></td>
+                    <td><button @click="numberButtonClick(9)">9</button></td>
+                    <td><button @click="actionButtonClick('dividir')" class="no-number">/</button></td>
+                </tr>
+                <tr>
+                    <td><button @click="actionButtonClick('result')" class="equal">=</button></td>
+                    <td><button @click="numberButtonClick(0)">0</button></td>
+                    <td><button @click="numberButtonClick('.')">.</button></td>
+                    <td><button @click="actionButtonClick('multiplicar')" class="no-number">x</button></td>
+                </tr>
+            </table>
+            <div class="calc-footer">Developed by Renato</div>
+        </div>
+    </template>
+
+    <script src="js/vue.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

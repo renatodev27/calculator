@@ -1,11 +1,138 @@
-h1 {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-nav {
-    background-color: rgb(255, 196, 0);
+body {
+    background: url('../src/background_image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-    background-color: rgb(48, 42, 73);
+.formulario {
+    padding: 20px;
+    width: 20%;
+    margin: 40px auto;
+    small { margin-bottom: 50px }
+
+    input {
+        width: 100%;
+        box-shadow: 1px 1px 2px 0 #ccc;
+        border: 1px solid #242424;
+        padding-top: 10px;
+        border-radius: 3px;
+    }
+
+    button {
+        margin-top: 6px;
+        margin-bottom: 20px;
+        border: 1px solid #f71528;
+        color: #fff;
+        background-color: #f71528;
+        border-radius: 3px;
+        padding: 7.5px;
+        cursor: pointer;
+    }
+}
+
+.calculator-form {
+    width: 25%;
+    margin: 15px auto;
+    border: 1px solid #3b4147;
+    border-radius: 25px;
+    background-color: #3b4147;
+    box-shadow: 1px 1px 6px 2px rgb(46, 46, 46);
+
+    .calc-header {
+        display: flex;
+        color: #fff;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+
+        span {
+            font-size: 0.8rem;
+            font-family: monospace;
+        }
+    }
+
+    input {
+        margin-top: 30px;
+        padding-top: 10px;
+        width: 99.5%;
+        text-align: right;
+        font-size: 2.5rem;
+        background-color: #31383f;
+        border: 1px solid #3b4147;
+        color: #fff;
+
+        &.full-operation {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #a1a1a1;
+            background-color: #3b4147;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    table {
+        width: 100%;
+        margin: 15px auto;
+        border-collapse: separate;
+        border-spacing: 20px;
+
+        button {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #3b4147;
+            background-color: #3b4147;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            //box-shadow: 0 0 7px 3px rgb(102, 102, 102);
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+                rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            transition: all .3s;
+
+            &:hover {
+                background-color: #f57600;
+                border: 1px solid #f57600;
+                box-shadow: rgba(255, 74, 2, 0.555) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+                rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            }
+
+            &.equal {
+                background-color: #f71528;
+
+                &:hover {
+                    background-color: #f83c4b;
+                    border: 1px solid #81111a;
+                }
+            }
+
+            &.no-number {
+                background-color: #888888;
+            }
+        }
+    }
+
+    .calc-footer {
+        text-align: center;
+        color: rgb(182, 182, 182);
+        margin-bottom: 7px;
+    }
 }
