@@ -12,43 +12,17 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.formulario {
-  padding: 20px;
-  width: 20%;
-  margin: 40px auto;
-}
-.formulario small {
-  margin-bottom: 50px;
-}
-.formulario input {
-  width: 100%;
-  box-shadow: 1px 1px 2px 0 #ccc;
-  border: 1px solid #242424;
-  padding-top: 10px;
-  border-radius: 3px;
-}
-.formulario button {
-  margin-top: 6px;
-  margin-bottom: 20px;
-  border: 1px solid #f71528;
-  color: #fff;
-  background-color: #f71528;
-  border-radius: 3px;
-  padding: 7.5px;
-  cursor: pointer;
-}
-
 .calculator-form {
   width: 25%;
   margin: 15px auto;
   border: 1px solid #3b4147;
   border-radius: 25px;
-  background-color: #3b4147;
+  background-color: #c7c7c7;
   box-shadow: 1px 1px 6px 2px #2e2e2e;
 }
 .calculator-form .calc-header {
   display: flex;
-  color: #fff;
+  color: #242424;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
@@ -63,15 +37,17 @@ body {
   width: 99.5%;
   text-align: right;
   font-size: 2.5rem;
-  background-color: #31383f;
-  border: 1px solid #3b4147;
-  color: #fff;
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  color: #242424;
+  font-family: monospace;
 }
 .calculator-form input.full-operation {
   margin: 0;
   font-size: 0.8rem;
-  color: #a1a1a1;
-  background-color: #3b4147;
+  color: #8b8b8b;
+  border-color: #eeeded;
+  background-color: #eeeded;
 }
 .calculator-form input:focus {
   outline: none;
