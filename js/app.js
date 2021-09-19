@@ -21,8 +21,6 @@ const calculatorComponent = Vue.component('calculator', {
                 this.inputValue = '';
                 this.resultUsed = false;
             }
-                
-            this.fullOperation += String(number);
 
             if (this.addedOperation) {
                 this.addedOperation = false;
@@ -51,6 +49,7 @@ const calculatorComponent = Vue.component('calculator', {
                     if (!this.resultUsed) {
                         this.totalValue += num;
                         this.resultUsed = false;
+                        this.fullOperation += `${num}`;
                     }
                     else {
                         this.fullOperation = `${this.totalValue}`;
@@ -67,6 +66,7 @@ const calculatorComponent = Vue.component('calculator', {
                         if (this.totalValue == 0) this.totalValue = num;
                         else this.totalValue -= num;
                         this.resultUsed = false;
+                        this.fullOperation += `${num}`;
                     }
                     else {
                         this.fullOperation = `${this.totalValue}`;
@@ -83,6 +83,7 @@ const calculatorComponent = Vue.component('calculator', {
                         if (this.totalValue == 0) this.totalValue = num;
                         else this.totalValue *= num;
                         this.resultUsed = false;
+                        this.fullOperation += `${num}`;
                     }
                     else {
                         this.fullOperation = `${this.totalValue}`;
@@ -99,6 +100,7 @@ const calculatorComponent = Vue.component('calculator', {
                         if (this.totalValue == 0) this.totalValue = num;
                         else this.totalValue /= num;
                         this.resultUsed = false;
+                        this.fullOperation += `${num}`;
                     }
                     else {
                         this.fullOperation = `${this.totalValue}`;
@@ -110,6 +112,7 @@ const calculatorComponent = Vue.component('calculator', {
 
                 case 'result' :
                     this.addedOperation = false;
+                    this.fullOperation += `${this.inputValue} = `;
 
                     if (!this.resultUsed) {
                         
@@ -124,13 +127,13 @@ const calculatorComponent = Vue.component('calculator', {
                         this.inputValue = String(this.totalValue);
                         this.resultUsed = true;
                     }
-
-                    this.fullOperation += ' = ';
                 break;
             }
         },
         backSpace() {
-            this.inputValue.slice(this.inputValue.length - 1);
+            const string = this.inputValue.substring(0, this.inputValue.length - 1);
+            this.inputValue = string;
+            if (!this.inputValue) this.inputValue = '0';
         },
         ereaseAll(status) {
             this.inputValue = '0';
@@ -151,13 +154,15 @@ const calculatorComponent = Vue.component('calculator', {
                 case 56 : this.numberButtonClick(8); break;
                 case 57 : this.numberButtonClick(9); break;
                 case 48 : this.numberButtonClick(0); break;
-                case 187 : this.actionButtonClick('sumar'); break;
                 case 189 : this.actionButtonClick('restar'); break;
-                case 42 : this.actionButtonClick('multiplicar'); break;
-                case 55 : this.actionButtonClick('dividr'); break;
                 case 13 : this.actionButtonClick('result'); break;
                 case 27 : this.ereaseAll(true); break;
+                case 8 : if (!this.resultUsed) this.backSpace(); break;
             }
+
+            if (e.key === '*') this.actionButtonClick('multiplicar');
+            else if (e.key === '/') this.actionButtonClick('dividr');
+            else if (e.key === '+') this.actionButtonClick('sumar');
         }
     }
 })
