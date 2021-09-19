@@ -150,7 +150,6 @@ const calculatorComponent = Vue.component('calculator', {
                 case 52 : this.numberButtonClick(4); break;
                 case 53 : this.numberButtonClick(5); break;
                 case 54 : this.numberButtonClick(6); break;
-                case 55 : this.numberButtonClick(7); break;
                 case 56 : this.numberButtonClick(8); break;
                 case 57 : this.numberButtonClick(9); break;
                 case 48 : this.numberButtonClick(0); break;
@@ -159,10 +158,11 @@ const calculatorComponent = Vue.component('calculator', {
                 case 27 : this.ereaseAll(true); break;
                 case 8 : if (!this.resultUsed) this.backSpace(); break;
             }
-
+            
             if (e.key === '*') this.actionButtonClick('multiplicar');
-            else if (e.key === '/') this.actionButtonClick('dividr');
-            else if (e.key === '+') this.actionButtonClick('sumar');
+            if (e.key === '/') this.actionButtonClick('dividir');
+            if (e.key === '7') this.numberButtonClick(7);
+            if (e.key === '+') this.actionButtonClick('sumar');
         }
     }
 })
