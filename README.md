@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/73003319/134999732-1242f383-ba00-40fe-b8f8-8d451725da96.png">
   <h1>Calculator DEMO</h1>
-  <label>A virtual calculator where you can do your basic mathematic operations. Sum, rest, multipy and divide.</h6>
+  <label>A virtual calculator where you can do your basic mathematic operations. <br> Sum, rest, multipy and divide.</h6>
 </div>
 
 <details open="open">
