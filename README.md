@@ -39,6 +39,6 @@ git clone https://github.com/renatodev27/calculadora.git
 
 Renato Ramos Paretto - renatoramos.devops@gmail.com - rantopthetop93@gmail.com
 
-Project Link : https://github.com/renatodev27/calculadora.git
+Project Link : https://github.com/renatodev27/calculator.git
 
 
